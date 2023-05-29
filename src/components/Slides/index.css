@@ -1,83 +1,12 @@
-.header {
+.slides-container {
   display: flex;
-  flex-direction: row;
-  padding: 15px;
-  align-items: center;
-  background-color: #dbeafe;
+  height: 80vh;
 }
-
-.image-logo {
-  height: 40px;
-  padding-right: 15px;
-}
-
-.image-plus {
-  height: 20px;
-  padding-right: 15px;
-}
-
-.new {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #dbeafe;
-  margin: 10px;
-  border-width: 0px;
-  border-radius: 5px;
-  width: 80px;
-}
-
-.un-list {
+.slides-list {
+  width: 22%;
+  overflow: auto;
+  background-color: #f8fafc;
+  color: black;
+  padding: 0;
   list-style-type: decimal;
-}
-
-.list {
-  list-style-type: decimal;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
-  height: 80px;
-  width: 120px;
-}
-
-.heading {
-  font-size: 18px;
-  margin: 0px;
-}
-
-.para {
-  font-size: 12px;
-  margin: 0px;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-}
-
-.items {
-  height: 68vh;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  width: 35%;
-}
-
-.slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-}
-
-.slideHeading {
-  font-size: 40px;
-  margin: 0px;
-}
-
-.slidePara {
-  font-size: 20px;
-  margin: 0px;
 }

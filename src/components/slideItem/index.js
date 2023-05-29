@@ -1,19 +1,40 @@
+import {Component} from 'react'
 import './index.css'
+import SliderContext from '../../context'
 
-const SlideItem = props => {
-  const {details, onClickButton} = props
-  const {heading, description, id} = details
-  const slideChange = () => {
-    onClickButton(id)
+class SlideListItem extends Component {
+  render() {
+    const {details, serialNumber} = this.props
+    const {heading, description} = details
+
+    return (
+      <SliderContext.Consumer>
+        {value => {
+          const {changeActiveTab, activeIndex} = value
+          const isActive = activeIndex === serialNumber - 1
+          const activeStyling = isActive ? 'active-styling' : ''
+
+          const onClickSlideTab = () => {
+            changeActiveTab(serialNumber - 1)
+          }
+
+          return (
+            <li
+              className={`slide-list-item ${activeStyling}`}
+              onClick={onClickSlideTab}
+              testid={`slideTab${serialNumber}`}
+            >
+              <p className="slide-number">{serialNumber}</p>
+              <div className="slide-tab">
+                <h1 className="tab-heading">{heading}</h1>
+                <p className="tab-description">{description}</p>
+              </div>
+            </li>
+          )
+        }}
+      </SliderContext.Consumer>
+    )
   }
-  return (
-    <li className="list">
-      <button type="button" onClick={slideChange} testid={id}>
-        <h1 className="heading">{heading}</h1>
-        <p className="para">{description}</p>
-      </button>
-    </li>
-  )
 }
 
-export default SlideItem
+export default SlideListItem
